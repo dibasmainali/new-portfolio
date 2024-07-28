@@ -1,1 +1,1 @@
-![dibasmainali com np_](https://github.com/user-attachments/assets/7f7f2e85-06d4-4f93-ada2-d95100a5f1f6)
+![dibasmainali com np_ (2)](https://github.com/user-attachments/assets/a0206ff2-c952-4c07-9cab-3b19f53e59fa)
