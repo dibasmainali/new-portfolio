@@ -1,111 +1,125 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
+  // Sticky header
+  const header = document.querySelector('.header-area');
+  let lastScroll = 0;
 
-  //sticky header
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 1) {
-        $(".header-area").addClass("sticky");
-      } else {
-        $(".header-area").removeClass("sticky");
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 1) {
+      header.classList.add('sticky');
+    } else {
+      header.classList.remove('sticky');
+    }
+
+    lastScroll = currentScroll;
+    updateActiveSection();
+  });
+
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('.header ul li a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const target = document.querySelector(this.getAttribute('href'));
+      
+      if (target.classList.contains('active-section')) {
+        return;
       }
-  
-      // Update the active section in the header
-      updateActiveSection();
+      
+      const offset = target.offsetTop - 40;
+      
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+      });
+      
+      document.querySelectorAll('.header ul li a').forEach(link => link.classList.remove('active'));
+      this.classList.add('active');
     });
-  
-    $(".header ul li a").click(function(e) {
-      e.preventDefault(); 
-  
-      var target = $(this).attr("href");
-  
-      if ($(target).hasClass("active-section")) {
-        return; 
-      }
-  
-      if (target === "#home") {
-        $("html, body").animate(
-          {
-            scrollTop: 0 
-          },
-          500
-        );
-      } else {
-        var offset = $(target).offset().top - 40; 
-  
-        $("html, body").animate(
-          {
-            scrollTop: offset
-          },
-          500
-        );
-      }
-  
-      $(".header ul li a").removeClass("active");
-      $(this).addClass("active");
-    });
-  
+  });
 
-    //Initial content revealing js
-    ScrollReveal({
-      distance: "100px",
-      duration: 2000,
-      delay: 200
-    });
+  // Mobile menu toggle
+  const menuIcon = document.querySelector('.menu_icon');
+  const navbar = document.querySelector('.navbar');
   
-    ScrollReveal().reveal(".header a, .profile-photo, .about-content, .education", {
-      origin: "left"
-    });
-    ScrollReveal().reveal(".header ul, .profile-text, .about-skills, .internship", {
-      origin: "right"
-    });
-    ScrollReveal().reveal(".project-title, .contact-title", {
-      origin: "top"
-    });
-    ScrollReveal().reveal(".projects, .contact", {
-      origin: "bottom"
-    });
-// Select the button element
-const sendButton = document.getElementById('sendButton');
+  menuIcon.addEventListener('click', () => {
+    navbar.style.display = navbar.style.display === 'flex' ? 'none' : 'flex';
+  });
 
-// Prevent form submission on button click
-sendButton.addEventListener('click', function(event) {
-  event.preventDefault(); // Prevents the default form submission
+  // ScrollReveal animations
+  const sr = ScrollReveal({
+    distance: '100px',
+    duration: 2000,
+    delay: 200,
+    reset: true
+  });
 
-  // Optionally, you can add other actions here, such as form validation or AJAX request
-
-  // For demonstration, you can simulate a delay before allowing the form to submit
-  setTimeout(function() {
-    // After any necessary actions, allow the form to submit programmatically
-    sendButton.closest('form').submit(); // Replace with actual form submission code if needed
-  }, 2220); // Adjust the delay as needed
-});
-
+  sr.reveal('.header a, .profile-photo, .about-content, .education', {
+    origin: 'left'
   });
   
-  function updateActiveSection() {
-    var scrollPosition = $(window).scrollTop();
+  sr.reveal('.header ul, .profile-text, .about-skills, .internship', {
+    origin: 'right'
+  });
   
-    // Checking if scroll position is at the top of the page
-    if (scrollPosition === 0) {
-      $(".header ul li a").removeClass("active");
-      $(".header ul li a[href='#home']").addClass("active");
-      return;
-    }
+  sr.reveal('.project-title, .contact-title', {
+    origin: 'top'
+  });
   
-    // Iterate through each section and update the active class in the header
-    $("section").each(function() {
-      var target = $(this).attr("id");
-      var offset = $(this).offset().top;
-      var height = $(this).outerHeight();
-  
-      if (
-        scrollPosition >= offset - 40 &&
-        scrollPosition < offset + height - 40
-      ) {
-        $(".header ul li a").removeClass("active");
-        $(".header ul li a[href='#" + target + "']").addClass("active");
-      }
-    });
-  }
-  
+  sr.reveal('.projects, .contact', {
+    origin: 'bottom'
+  });
 
- 
+  // Contact form handling
+  const form = document.querySelector('form');
+  const sendButton = document.getElementById('sendButton');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        sendButton.classList.add('sent');
+        form.reset();
+        setTimeout(() => {
+          sendButton.classList.remove('sent');
+        }, 2000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to send message. Please try again.');
+    }
+  });
+});
+
+function updateActiveSection() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.header ul li a');
+  
+  let currentSection = '';
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 60;
+    const sectionHeight = section.clientHeight;
+    
+    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+  
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${currentSection}`) {
+      link.classList.add('active');
+    }
+  });
+}
