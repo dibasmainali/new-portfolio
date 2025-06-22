@@ -4,7 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dibas</title>
+    <title>Dibas Mainali - Web Designer & Developer Portfolio</title>
+    <meta name="description" content="Dibas Mainali - Web Designer specializing in React, JavaScript, and modern web development. View my portfolio and projects." />
+    <meta name="keywords" content="web designer, frontend developer, web developer, React, JavaScript, HTML, CSS, Tailwind CSS, portfolio" />
+    <meta name="author" content="Dibas Mainali" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-portfolio-url.netlify.app/" />
+    <meta property="og:title" content="Dibas Mainali - Web Designer & Developer Portfolio" />
+    <meta property="og:description" content="Web Designer specializing in React, JavaScript, and modern web development." />
+    <meta property="og:image" content="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://your-portfolio-url.netlify.app/" />
+    <meta property="twitter:title" content="Dibas Mainali - Web Designer & Developer Portfolio" />
+    <meta property="twitter:description" content="Web Designer specializing in React, JavaScript, and modern web development." />
+    <meta property="twitter:image" content="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" />
+    
     <link
       rel="icon"
       type="image/x-icon"
@@ -17,6 +35,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       class="stylesheet"
     />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 
   <body>
@@ -32,7 +52,8 @@
           <ul class="navbar">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -55,7 +76,9 @@
       <div class="profile-text">
         <h5>Hi I'm</h5>
         <br />
-        <h1>Dibas mainali</h1>
+        <div class="typing-text">
+          <h2>Dibas Mainali</h2>
+        </div>
         <br />
         <p>
           Welcome to my portfolio website! I'm a Frontend developer, I bring
@@ -70,8 +93,8 @@
         </p>
 
         <div class="btn-group">
-          <a href="#" class="btn active">Download CV</a>
-          <a href="mailto:dibasmainali012@gmail.com" class="btn">Contact</a>
+          <a href="resume.pdf" class="btn active" download>Download CV</a>
+          <a href="#contact" class="btn">Contact</a>
         </div>
 
         <div class="social">
@@ -99,8 +122,8 @@
             <h4>About Me</h4>
             <ul>
               <li>
-                I am currently pursuing my Bachelor's Degree in BSC hons
-                Ccomputing.I have built a solid foundation in Frontend
+                I am currently pursuing my Bachelor's Degree in BSc (Hons)
+                Computing. I have built a solid foundation in Frontend
                 development, particularly in areas such as Backend as well as
                 database.
               </li>
@@ -125,96 +148,136 @@
               <li>Age:20</li>
               <li>From:Nepal</li>
               <li>Email:dibasmainali012@gmail.com</li>
-              <li>Availabiltiy:Fulltime</li>
+              <li>Availability: Fulltime</li>
               <li>Experience&lt;1yr</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Education Section Redesigned: Horizontal Card Layout -->
+        <div class="education-section redesigned-education">
+          <h3 class="title">Education</h3>
+          <div class="education-cards">
+            <div class="education-card">
+              <div class="edu-degree">BSc (Hons) Computing</div>
+              <div class="edu-school">The British College</div>
+              <div class="edu-date"><i class="fa fa-calendar"></i> 2023 - now</div>
+            </div>
+            <div class="education-card">
+              <div class="edu-degree">+2 (3.21 GPA)</div>
+              <div class="edu-school">Khwopa Secondary School</div>
+              <div class="edu-date"><i class="fa fa-calendar"></i> 2021 - 2023</div>
+            </div>
+            <div class="education-card">
+              <div class="edu-degree">SEE (3.5 GPA)</div>
+              <div class="edu-school">Learners' Academy Secondary School</div>
+              <div class="edu-date"><i class="fa fa-calendar"></i> 2017 - 2020</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-------------------------- Skills Section -------------------------->
+    <section class="skills-section" id="skills">
+      <div class="skills-container">
+        <div class="skills-title">
+          <h2>Skills & Technologies</h2>
+          <p>My technical expertise and tools I use to bring ideas to life</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3><i class="fas fa-code"></i>Frontend Development</h3>
+            <ul class="skill-list">
+              <li><i class="fas fa-check"></i>HTML5 & CSS3</li>
+              <li><i class="fas fa-check"></i>JavaScript (ES6+)</li>
+              <li><i class="fas fa-check"></i>React.js</li>
+              <li><i class="fas fa-check"></i>Next.js</li>
+              <li><i class="fas fa-check"></i>Responsive Design</li>
+              <li><i class="fas fa-check"></i>CSS Grid & Flexbox</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-server"></i>Backend & Database</h3>
+            <p class="learning-note">currently learning</p>
+            <ul class="skill-list">
+              <li><i class="fas fa-check"></i>Node.js</li>
+              <li><i class="fas fa-check"></i>Python</li>
+              <li><i class="fas fa-check"></i>Java</li>
+              <li><i class="fas fa-check"></i>MySQL</li>
+              <li><i class="fas fa-check"></i>MongoDB</li>
+              <li><i class="fas fa-check"></i>RESTful APIs</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i>Tools & Technologies</h3>
+            <ul class="skill-list">
+              <li><i class="fas fa-check"></i>Git & GitHub</li>
+              <li><i class="fas fa-check"></i>VS Code</li>
+              <li><i class="fas fa-check"></i>Figma</li>
+              <li><i class="fas fa-check"></i>Adobe Photoshop</li>
+              <li><i class="fas fa-check"></i>WordPress</li>
+              <li><i class="fas fa-check"></i>Netlify</li>
+              <li><i class="fas fa-check"></i>Vercel</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-------------- Education & Internship -------------->
-    <section class="education-content" id="education">
-      <div class="container">
-        <div class="row">
-          <div class="education">
-            <h3 class="title">Education</h3>
-            <div class="row">
-              <div class="timeline-box">
-                <div class="timeline">
-                  <!-- Timeline-item -->
-                  <div class="timeline-item">
-                    <div class="circle-dot"></div>
-                    <h3 class="timeline-title">Bsc hons computing</h3>
-                    <h4 class="timeline-title">The British college</h4>
-                    <h4 class="timeline-title">
-                      <i class="fa fa-calendar"></i> 2023- now
-                    </h4>
-                  </div>
-                  <!-- Timeline-item -->
-                  <div class="timeline-item">
-                    <div class="circle-dot"></div>
-                    <h3 class="timeline-title">+2-3.21GPA</h3>
-                    <h4 class="timeline-title">Khwopa Secondary school</h4>
-                    <h4 class="timeline-title">
-                      <i class="fa fa-calendar"></i> 2021-2023
-                    </h4>
-                  </div>
-                  <!-- Timeline-item -->
-                  <div class="timeline-item">
-                    <div class="circle-dot"></div>
-                    <h3 class="timeline-title">SEE-3.5GPA</h3>
-                    <h4 class="timeline-title">
-                      Learners' Academy Secondary school
-                    </h4>
-                    <h4 class="timeline-title">
-                      <i class="fa fa-calendar"></i> 2017-2020
-                    </h4>
-                  </div>
-                </div>
-              </div>
+    <!-------------------------- Experience Section -------------------------->
+    <section class="experience-section" id="experience">
+      <div class="experience-container">
+        <div class="experience-title">
+          <h2>Work Experience</h2>
+          <p>My professional journey and achievements</p>
+        </div>
+        <div class="experience-grid">
+          <div class="experience-card">
+            <h3>Frontend Developer Intern</h3>
+            <h4>VritTech</h4>
+            <div class="duration">
+              <i class="fas fa-calendar"></i>
+              <span>August 2023 - Present</span>
             </div>
+            <p>
+              Contributed to web application UI development using HTML, CSS, and JavaScript. 
+              Worked with design and backend teams to implement responsive features and 
+              ensure cross-browser compatibility. Gained valuable experience in frontend 
+              development and user experience principles.
+            </p>
           </div>
-          <div class="internship">
-            <h3 class="title">Internship</h3>
-            <div class="row">
-              <div class="timeline-box">
-                <div class="timeline">
-                  <!-- Timeline-item -->
-                  <div class="timeline-item">
-                    <div class="circle-dot"></div>
-                    <h3 class="timeline-title">Frontend Developer Intern</h3>
-                    <h4 class="timeline-title">VritTech</h4>
-                    <h4 class="timeline-title">
-                      <i class="fa fa-calendar"></i>August 2023
-                    </h4>
-                    <li class="timeline-text">
-                      Contributed to web application UI development using HTML,
-                      CSS, and JavaScript. Worked with design and backend teams
-                      to implement responsive features and ensure cross-browser
-                      compatibility. Gained valuable experience in frontend
-                      development and user experience principles.
-                    </li>
-                  </div>
-                  <!-- Timeline-item -->
-                  <div class="timeline-item">
-                    <div class="circle-dot"></div>
-                    <h3 class="timeline-title">Software Developer Intern</h3>
-                    <h4 class="timeline-title">Innovative Solutions</h4>
-                    <h4 class="timeline-title">
-                      <i class="fa fa-calendar"></i> march 2024
-                    </h4>
-                    <li class="timeline-text">
-                      Developed and maintained software applications using
-                      Python and Java. Conducted code reviews and unit testing
-                      to ensure high-quality deliverables. Gained hands-on
-                      experience in full-stack development and software
-                      engineering best practices.
-                    </li>
-                  </div>
-                </div>
-              </div>
+          
+          <div class="experience-card">
+            <h3>Software Developer Intern</h3>
+            <h4>Innovative Solutions</h4>
+            <div class="duration">
+              <i class="fas fa-calendar"></i>
+              <span>March 2024 - Present</span>
             </div>
+            <p>
+              Developed and maintained software applications using Python and Java. 
+              Conducted code reviews and unit testing to ensure high-quality deliverables. 
+              Gained hands-on experience in full-stack development and software 
+              engineering best practices.
+            </p>
+          </div>
+          
+          <div class="experience-card">
+            <h3>Freelance Web Developer</h3>
+            <h4>Self-Employed</h4>
+            <div class="duration">
+              <i class="fas fa-calendar"></i>
+              <span>2023 - Present</span>
+            </div>
+            <p>
+              Created responsive websites and web applications for various clients. 
+              Specialized in modern frontend technologies and user experience design. 
+              Managed projects from concept to deployment, ensuring client satisfaction 
+              and timely delivery.
+            </p>
           </div>
         </div>
       </div>
@@ -231,7 +294,7 @@
           <!-- 1st Project -->
           <div class="project">
             <a href="https://accu-weather-mu.vercel.app/" target="_blank">
-              <i class="fa fa-code"></i>
+              <i class="fa fa-cloud"></i>
               <h4>Weather App</h4>
               <p>
                 Created a weather application using React and API integration to
@@ -261,15 +324,58 @@
           <div class="project">
             <a
               href="https://nike-com-git-main-dibas-projects-c4290698.vercel.app/"
+              target="_blank"
             >
-              <i class="fa fa-code"></i>
-              <h4>Nike.com</h4>
+              <i class="fa fa-shopping-bag"></i>
+              <h4>Nike.com Clone</h4>
               <p>
                 Developed a replica of the Nike.com website using HTML, CSS, and
                 JavaScript. The project includes features like a dynamic
                 homepage, product listings, and a responsive design. 
               </p>
               
+            </a>
+          </div>
+
+          <!-- 4th Project -->
+          <div class="project">
+            <a href="https://tech-store.dibasmainali.com.np/" target="_blank">
+              <i class="fa fa-shopping-cart"></i>
+              <h4>Tech Store E-commerce</h4>
+              <p>
+                Built a complete e-commerce website for tech products using modern web technologies. 
+                Features include product catalog, shopping cart, user authentication, 
+                secure payment integration, and responsive design for seamless 
+                online shopping experience.
+              </p>
+            </a>
+          </div>
+
+          <!-- 5th Project -->
+          <div class="project">
+            <a href="https://himalayansitar.com/" target="_blank">
+              <i class="fa fa-music"></i>
+              <h4>Himalayan Sitar - Artist Portfolio</h4>
+              <p>
+                Built a custom WordPress website for Uttam Ghosh (Himalayan Sitar), 
+                a sitarist and ethnomusicologist. Features include photo gallery, 
+                music player, event listings, and responsive design showcasing 
+                classical Nepali music traditions.
+              </p>
+            </a>
+          </div>
+
+          <!-- 6th Project -->
+          <div class="project">
+            <a href="https://travel-itinerary-planner-five.vercel.app/" target="_blank">
+              <i class="fa fa-plane"></i>
+              <h4>Travel Itinerary Planner</h4>
+              <p>
+                Developed a comprehensive travel planning application using Next.js. 
+                Features include itinerary creation, destination management, 
+                travel date planning, and responsive design for seamless 
+                travel organization experience.
+              </p>
             </a>
           </div>
         </div>
@@ -435,8 +541,13 @@
     <footer class="footer">
       <small class="message">Thanks for visiting and happy coding!</small>
       <small class="copyright"
-        >&copy; Copyright 2023. All rights reserved.</small
+        >&copy; Copyright 2024. All rights reserved.</small
       >
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
   </body>
 </html>
